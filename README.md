@@ -32,8 +32,17 @@ v2 plan: bigger net (64x64), 3-5M steps, tuned entropy.
 ## Files
 
 - `train.py` — trainer + evaluator + video recorder
+<<<<<<< HEAD
 - `enjoy.py` — watch the trained agent fly live: `python enjoy.py 5`
 - `requirements.txt` — pinned stack
 - `curve.png` — v1 learning curve
 - `landing.mp4` — v1 best flight (7.4s)
 - `ppo_lander.zip` — v1 weights
+- `viz_live.py` — **live brain viz**: per step it replays the flight and draws
+  what's happening below the learning — OBS bars (what it sees) →
+  HIDDEN-16 activations (what it thinks) → POLICY probs + value (what it wants),
+  with a live `STEP | DECISION | value | reward | return` readout.
+  Run: `uv run --python 3.12 --with 'gymnasium[box2d]' --with stable-baselines3 --with matplotlib --with imageio --with imageio-ffmpeg python3 viz_live.py`
+  → `brain.mp4` (seed 13: 363 steps, **+175**, clean landing) + `brain_still.png`.
+- `scan_seeds.py` — fast no-render seed scan used to pick the demo episode.
+>>>>>>> 8b51127 (v2: live brain viz (obs->hidden16->policy+value per step) + clean +175 landing)
